@@ -28,26 +28,39 @@ def drop_piece(board, col, row, piece):
 
 def print_board(board):
     print(np.flip(board,0))
-          
-          
+    
+def winning_move(board, piece):
+    #horizontal combinations
+    for c in range(COLUMN_COUNT-3):
+        for r in range(ROW_COUNT):
+            if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece:
+                return True
+        
+
 board= create_board()
 print_board(board)
 
 turn=0
 game_over=False
+
 while not game_over:
     #player 1 input
     if turn == 0:
         col = int(input("Player 1 type a number(0-6)"))
         if is_valid_location(board, col):
             row= get_next_open_row(board, col)
-            drop_piece(board,col,row,1)
+            drop_piece(board, col, row, 1)
+            if winning_move(board, 1):
+                print("Player 1 WINS!! ")
+                game_over=True
     else:
         col = int(input("Player 2 type a number(0-6)"))
         if is_valid_location(board, col):
             row= get_next_open_row(board, col)
             drop_piece(board,col,row,2)
-            
+            if winning_move(board, 2):
+                print("Player 2 WINS!! ")
+                game_over=True
     turn+=1
     turn = turn % 2
     print_board(board)
