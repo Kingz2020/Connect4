@@ -1,5 +1,5 @@
 # Connect4
-- an attempt to create my first AI game. Firstly taking Keith Galli's youtube python Connect 4 and converting it into an AI game.
+An attempt to create my first AI game. By firstly taking Keith Galli's youtube python Connect 4 game and adding algorithms to be able to play the computer.
 
 # Contents
 - Requirements
