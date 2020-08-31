@@ -6,4 +6,8 @@
 - Stage
 
 # Requirements
-- so far only Numpy is necessary. but I'll add the features of PYgames soon and we'll see what else we need.
+The only python llibraries necessary for this game are listed below:
+- Numpy
+- Pygame
+- Sys
+- Math
